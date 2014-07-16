@@ -10,6 +10,7 @@
 <body>
 
 <s:iterator value="events">
+	<!--
 	<form action="Delete.ation" >
 		<input type="hidden" name=id value='<s:property value="id" />' />
 		<input type="submit" value='-' title='Delete' />
@@ -18,8 +19,10 @@
 		<input type="hidden" name=id value='<s:property value="id" />' />
 		<input type="submit" value='-' title='Attendance' />
 	</form>
+	  -->
 	<s:property value="name" />
 	<br>
+	
 </s:iterator>
 </body>
 </html>
