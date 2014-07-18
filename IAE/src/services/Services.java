@@ -19,10 +19,10 @@ public class Services {
 	}
 	
 	public Session sess() {
-		sess = sessionFactory.getCurrentSession();
-		sess.beginTransaction();
+		//sess = sessionFactory.getCurrentSession();
+		//sess.beginTransaction();
 		//return sessionFactory.getCurrentSession();
-		//sess = sessionFactory.openSession();
+		sess = sessionFactory.openSession();
 		return sess;
 	}
 	

@@ -6,6 +6,10 @@ import com.opensymphony.xwork2.ActionSupport;
 
 public class BaseAction extends ActionSupport{
 	
+	public class Delete {
+
+	}
+
 	protected Services services;
 
 	public void setServices(Services services) {

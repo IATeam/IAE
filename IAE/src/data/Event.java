@@ -10,12 +10,12 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
-//@Entity
-//@Table(name="events")
+@Entity
+@Table(name="events")
 public class Event {
 	
-	//@Id
-	//@GeneratedValue
+	@Id
+	@GeneratedValue
 	Long id;
 	
 	public Long getId() {
@@ -36,12 +36,12 @@ public class Event {
 		this.name = name;
 	}
 	
-	//@ManyToMany
-	//@JoinTable(
-	//		name="event_person",
-	//		joinColumns=@JoinColumn(name="event_id"),
-	//		inverseJoinColumns=@JoinColumn(name="person_id")
-	//)
+	@ManyToMany
+	@JoinTable(
+			name="event_person",
+			joinColumns=@JoinColumn(name="event_id"),
+			inverseJoinColumns=@JoinColumn(name="person_id")
+	)
 	Set<Person> people;
 
 	public Set<Person> getPeople() {

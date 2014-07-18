@@ -34,8 +34,7 @@
         <property name="minPoolSize" value="1"></property>  
         <property name="initialPoolSize" value="1"></property>  
         <property name="maxIdleTime" value="20"></property>             
-	</bean> 
-	    
+	</bean>
 	
 	<bean id="sessionFactory" 
 		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean" scope="singleton">
@@ -43,12 +42,14 @@
 		<property name="dataSource">  
             <ref bean="dataSource" />  
         </property>
+        <!-- 
        <property name="mappingResources">
 			<list> 
 				<value>data/Event.hbm.xml</value>
 				<value>data/Person.hbm.xml</value>
           	</list>
       </property>
+       -->
         <property name="hibernateProperties">
 			<value>
 				hibernate.dialect=org.hibernate.dialect.MySQLDialect
@@ -57,6 +58,12 @@
 				hibernate.current_session_context_class=thread
 			</value>
 		</property>
+		<!-- mapping for annotation style -->
+		<property name="packagesToScan">  
+            <list>  
+                <value>data</value>  
+            </list>  
+        </property>
         <!--
         <property name="configLocation" value="classpath:hibernate.cfg.xml"/>
         -->
@@ -66,6 +73,25 @@
 	</bean>
 	
 	<tx:annotation-driven />
+	
+	<tx:advice id="txAdvice" transaction-manager="transactionManager">  
+        <tx:attributes>  
+            <tx:method name="insert*" propagation="REQUIRED" />  
+            <tx:method name="update*" propagation="REQUIRED" />  
+            <tx:method name="edit*" propagation="REQUIRED" />  
+            <tx:method name="save*" propagation="REQUIRED" />  
+            <tx:method name="add*" propagation="REQUIRED" />  
+            <tx:method name="new*" propagation="REQUIRED" />  
+            <tx:method name="set*" propagation="REQUIRED" />  
+            <tx:method name="remove*" propagation="REQUIRED" />  
+            <tx:method name="delete*" propagation="REQUIRED" />  
+            <tx:method name="change*" propagation="REQUIRED" />  
+            <tx:method name="get*" propagation="REQUIRED" read-only="true" />  
+            <tx:method name="find*" propagation="REQUIRED" read-only="true" />  
+            <tx:method name="load*" propagation="REQUIRED" read-only="true" />  
+            <tx:method name="*" propagation="REQUIRED" read-only="true" />  
+        </tx:attributes>  
+    </tx:advice>  
 	
 	<bean id="services" class="services.Services" scope="singleton">
 		<property name="sessionFactory" ref="sessionFactory" />

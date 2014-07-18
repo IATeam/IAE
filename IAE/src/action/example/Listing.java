@@ -6,12 +6,15 @@ import data.Event;
 import action.base.BaseAction;
 
 public class Listing extends BaseAction{
+	
+	List<Event> events;
+	
 	public String execute(){
 		events = services.getEvents();
 		return "success";
 	}
 	
-	List<Event> events;
+	
 	public List<Event> getEvents() {
 		return events;
 	}
