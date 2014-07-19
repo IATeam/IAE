@@ -7,13 +7,11 @@ public class Delete extends BaseAction{
 	
 	public String execute() {
 		// cannot set value for isPostBack from jsp, should be automatically setted by calling setIsPostBack()
-		//if(isPostBack) {
-		  if(id>=0){
+		if(isPostBack) {
 			System.out.println("called");
 			services.deleteEventById(id);
 			return redirect("Listing.action");
-		  }
-		//}
+		}
 		return "success";
 	}
 	
@@ -26,12 +24,12 @@ public class Delete extends BaseAction{
 	public void setId(int id) {
 		this.id = id;
 	}
-/*	
+	
 	boolean isPostBack;
-	public void setIsPostBack(boolean isPostBack) {
-		this.isPostBack = isPostBack;
+	public void setIsPostBack(boolean value) {
+		this.isPostBack = value;
 	}
-*/
+
 
 	Event getEvent() {
 		return services.getEventById(id);

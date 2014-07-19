@@ -12,9 +12,9 @@
 		Are you sure you wish to delete this event?<br />
 		<s:property value="eventName" />
 		<s:hidden name="id" />
-		<!--
+		 
 		<input type="hidden" value="true" name="isPostBack" />
-		-->
+		
 		<s:submit value="Delete Event" />
 	</s:form>
 	

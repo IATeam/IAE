@@ -21,13 +21,15 @@ public class Services {
 	public Session sess() {
 		//sess = sessionFactory.getCurrentSession();
 		//sess.beginTransaction();
-		//return sessionFactory.getCurrentSession();
-		sess = sessionFactory.openSession();
-		return sess;
+		return sessionFactory.getCurrentSession();
+		//sess=null;
+		//sess = sessionFactory.openSession();
+		//return sess;
 	}
 	
 	public Event getEventById(long id) {
-		return (Event)sess().load(Event.class, id);
+		Event tmp = (Event)sess().load(Event.class, id);
+		return tmp;
 	}
 	
 	public Person getPersonById(long id) {

@@ -12,6 +12,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="events")
+@org.hibernate.annotations.Proxy(lazy=false)
 public class Event {
 	
 	@Id
