@@ -11,33 +11,11 @@
  Target Server Version : 50613
  File Encoding         : utf-8
 
- Date: 07/16/2014 14:28:22 PM
+ Date: 07/19/2014 09:50:31 AM
 */
 
 SET NAMES utf8;
 SET FOREIGN_KEY_CHECKS = 0;
-
--- ----------------------------
---  Table structure for `EVENT`
--- ----------------------------
-DROP TABLE IF EXISTS `EVENT`;
-CREATE TABLE `EVENT` (
-  `ID` bigint(20) NOT NULL,
-  `NAME` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`ID`),
-  CONSTRAINT `FK_qt6navk8aeanmrk9xdls4s1l5` FOREIGN KEY (`ID`) REFERENCES `PERSON` (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- ----------------------------
---  Table structure for `PERSON`
--- ----------------------------
-DROP TABLE IF EXISTS `PERSON`;
-CREATE TABLE `PERSON` (
-  `ID` bigint(20) NOT NULL,
-  `NAME` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`ID`),
-  CONSTRAINT `FK_a1y9hq5hd326ir3fqu0g3r83v` FOREIGN KEY (`ID`) REFERENCES `EVENT` (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 --  Table structure for `event_person`
@@ -64,18 +42,17 @@ COMMIT;
 -- ----------------------------
 DROP TABLE IF EXISTS `events`;
 CREATE TABLE `events` (
-  `id` int(11) NOT NULL DEFAULT '0',
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `id` (`id`),
-  CONSTRAINT `FK_1yoj71g6yi7yjn511jlvdfiye` FOREIGN KEY (`id`) REFERENCES `people` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  KEY `id` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 --  Records of `events`
 -- ----------------------------
 BEGIN;
-INSERT INTO `events` VALUES ('1', 'new year eve'), ('2', 'new year day');
+INSERT INTO `events` VALUES ('1', 'new year eve'), ('2', 'new year day'), ('5', 'Easter'), ('6', 'Aus Day'), ('7', 'Christmas');
 COMMIT;
 
 -- ----------------------------
@@ -83,12 +60,11 @@ COMMIT;
 -- ----------------------------
 DROP TABLE IF EXISTS `people`;
 CREATE TABLE `people` (
-  `id` int(11) NOT NULL DEFAULT '0',
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `id` (`id`),
-  CONSTRAINT `FK_igx6kmnwkk1rca9q4vrjm0s91` FOREIGN KEY (`id`) REFERENCES `events` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  KEY `id` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 --  Records of `people`
