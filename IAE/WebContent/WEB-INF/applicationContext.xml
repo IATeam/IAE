@@ -62,7 +62,7 @@
 		<property name="packagesToScan">  
             <list>  
                 <value>data</value>  
-            </list>  
+            </list>
         </property>
         <!--
         <property name="configLocation" value="classpath:hibernate.cfg.xml"/>
