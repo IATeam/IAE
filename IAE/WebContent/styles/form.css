@@ -1,0 +1,10 @@
+@CHARSET "US-ASCII";
+
+.form{
+	background-color: pink;
+	text-align: left;
+	box-shadow: 5px 5px 5px black;
+	width: 98%;
+    margin: 0 auto;
+    height: 500px;
+}
