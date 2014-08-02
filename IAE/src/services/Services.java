@@ -74,6 +74,9 @@ public class Services {
 		getEventById(eventId).getPeople().add(getPersonById(personId));
 	}
 	
-	
+	public GenderTypes getGenderTypeById(long id) {
+		GenderTypes tmp = (GenderTypes)sess().get(GenderTypes.class, id);
+		return tmp;
+	}
 	
 }

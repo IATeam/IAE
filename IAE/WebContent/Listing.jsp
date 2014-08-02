@@ -8,7 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+<!--
 <s:iterator value="events">	
 	<form action="Delete.action" >
 		<input type="hidden" name=id value='<s:property value="id" />' />
@@ -22,5 +22,7 @@
 	<s:property value="name" />
 	<br>
 </s:iterator>
+-->
+  <input type="text" value='<s:property value="ge.id" />' />
 </body>
 </html>

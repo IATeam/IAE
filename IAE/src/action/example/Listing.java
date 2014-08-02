@@ -3,19 +3,16 @@ package action.example;
 import java.util.List;
 
 import data.Event;
+import data.GenderTypes;
 import action.base.BaseAction;
 
 public class Listing extends BaseAction{
 	
-	List<Event> events;
+	GenderTypes ge;
+	Integer a=1;
 	
 	public String execute(){
-		events = services.getEvents();
+		ge = services.getGenderTypeById(a);
 		return "success";
-	}
-	
-	
-	public List<Event> getEvents() {
-		return events;
 	}
 }
