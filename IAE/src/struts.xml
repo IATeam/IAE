@@ -24,4 +24,27 @@
     <constant name="struts.ui.templateDir" value="template" />
     <constant name="struts.ui.templateSuffix" value="ftl" />
     
+    <!-- Enquiry Forms -->
+    <package name="enquiry" namespace="/enquiry" extends="struts-default">
+    	<action name="*" class="action.enquiry.EnquiryAction">
+    		<result name="success">/forms/{1}.jsp</result>
+    	</action>
+    </package>
+    
+    <!-- Case Forms -->
+    <package name="case" namespace="/case" extends="struts-default">
+    	<action name="*" class="action.cases.CaseAction">
+    		<result name="success">/forms/{1}.jsp</result>
+    	</action>
+    </package>
+    
+    
+    <package name="radio" extends="struts-default">
+    	<action name="radio" class="action.radio.RadioAction">
+    		<result name="INDEX">/home/home.jsp</result>
+    	</action>
+    </package>
+    
+    <include file="login.xml"/>
+    
 </struts>

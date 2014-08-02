@@ -28,7 +28,7 @@ public class Services {
 	}
 	
 	public Event getEventById(long id) {
-		Event tmp = (Event)sess().load(Event.class, id);
+		Event tmp = (Event)sess().get(Event.class, id);
 		return tmp;
 	}
 	
