@@ -15,4 +15,8 @@
             <column name="accommodation_description" />
         </property>
     </class>
+    
+    <query name="AccommodatinTypes.findAccommodationTypeById">
+      <query-param name="Id" type="Integer"/>
+    </query>
 </hibernate-mapping>

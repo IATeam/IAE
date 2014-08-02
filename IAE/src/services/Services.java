@@ -74,4 +74,6 @@ public class Services {
 		getEventById(eventId).getPeople().add(getPersonById(personId));
 	}
 	
+	
+	
 }

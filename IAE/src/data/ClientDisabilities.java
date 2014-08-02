@@ -11,6 +11,15 @@ public class ClientDisabilities implements java.io.Serializable {
 	private Integer contactId;
 	private Integer disabilityId;
 	private String comments;
+	private String primary_flag;
+
+	public String getPrimary_flag() {
+		return primary_flag;
+	}
+
+	public void setPrimary_flag(String primary_flag) {
+		this.primary_flag = primary_flag;
+	}
 
 	public ClientDisabilities() {
 	}
