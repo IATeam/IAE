@@ -21,6 +21,7 @@
 	<s:url id="urlENew" namespace="/enquiry" action="enquiry"></s:url>
 	<s:url id="urlCList" namespace="/case" value="caseList"></s:url>
 	<s:url id="urlCNew" namespace="/case" action="newCase"></s:url>
+	<s:url id="urlLinks" namespace="/links" action="links"></s:url>
 	
 
 	<nav>
@@ -33,7 +34,7 @@
 					<li><sj:a id="aEList" href="%{urlEList}" targets="formDiv">Enquiry List</sj:a>
 				</ul>
 			</li>
-			
+	
 			<li><a href="#">Case</a>
 				<ul>
 					<li><sj:a id="aCNew" href="%{urlCNew}" targets="formDiv">New Case</sj:a></li>
@@ -72,11 +73,7 @@
 			</li>
 			
 			<li>
-				<a href="#">Links</a>
-				<ul>
-					<li><sj:a id="aCNew" href="%{urlCNew}" targets="formDiv">New Case</sj:a></li>
-					<li><sj:a id="aCList" href="%{urlCList}" targets="formDiv">Case List</sj:a>
-				</ul>
+				<sj:a id="links" href="%{urlLinks}" targets="formDiv">Links</sj:a>
 			</li>
 			
 		</ul>
