@@ -34,6 +34,7 @@ function showHeader(){
 	$('header').animate({opacity: '1'}, 1500);
 }
 
-function animating(div){
-	
+function menuclicked(){
+	radioChecked("radio2")
+	$('input[name="radio"').val([2]);
 }

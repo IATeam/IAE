@@ -6,12 +6,15 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<script src="<s:url value='/js/jquery/jquery-ui.min.js' encode='false' includeParams='none'/>"></script>
+
 <meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
 <s:head/>
 <sj:head/>
-<script src="//code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
+
 <link href="<s:url value='/styles/home.css' encode='false' includeParams='none'/>" rel="stylesheet" type="text/css" media="all"/>
 <script src="<s:url value='/js/lists.js' encode='false' includeParams='none'/>"></script>
+<script src="<s:url value='/js/home.js' encode='false' includeParams='none'/>"></script>
 <script src="<s:url value='/js/radioActions.js' encode='false' includeParams='none'/>"></script>
 <title>Illawarra Advocacy: Home</title>
 </head>
@@ -22,60 +25,59 @@
 	<s:url id="urlCList" namespace="/case" value="caseList"></s:url>
 	<s:url id="urlCNew" namespace="/case" action="newCase"></s:url>
 	
-
 	<nav>
 		<ul>
 			<li><a id="aHome" href="#">Illawarra Advocacy</a></li>
 			
 			<li><a id="aE" href="#">Enquiry</a>
 				<ul>
-					<li><sj:a id="aENew" href="%{urlENew}" targets="formDiv">New Enquiry</sj:a></li>
-					<li><sj:a id="aEList" href="%{urlEList}" targets="formDiv">Enquiry List</sj:a>
+					<li><sj:a id="aENew" href="%{urlENew}" targets="formDiv" onclick="menuclicked()">New Enquiry</sj:a></li>
+					<li><sj:a id="aEList" href="%{urlEList}" targets="formDiv" onclick="menuclicked()">Enquiry List</sj:a>
 				</ul>
 			</li>
 			
 			<li><a href="#">Case</a>
 				<ul>
-					<li><sj:a id="aCNew" href="%{urlCNew}" targets="formDiv">New Case</sj:a></li>
-					<li><sj:a id="aCList" href="%{urlCList}" targets="formDiv">Case List</sj:a>
+					<li><sj:a id="aCNew" href="%{urlCNew}" targets="formDiv" onclick="menuclicked()">New Case</sj:a></li>
+					<li><sj:a id="aCList" href="%{urlCList}" targets="formDiv" onclick="menuclicked()">Case List</sj:a>
 				</ul>
 			</li>
 			
 			<li>
 				<a href="#">Report</a>
 				<ul>
-					<li><sj:a id="aCNew" href="%{urlCNew}" targets="formDiv">New Case</sj:a></li>
-					<li><sj:a id="aCList" href="%{urlCList}" targets="formDiv">Case List</sj:a>
+					<li><sj:a id="aCNew" href="%{urlCNew}" targets="formDiv" onclick="menuclicked()">New Case</sj:a></li>
+					<li><sj:a id="aCList" href="%{urlCList}" targets="formDiv" onclick="menuclicked()">Case List</sj:a>
 				</ul>
 			</li>
 			<li><a href="#">Time Management</a>
 				<ul>
-					<li><sj:a id="aCNew" href="%{urlCNew}" targets="formDiv">New Case</sj:a></li>
-					<li><sj:a id="aCList" href="%{urlCList}" targets="formDiv">Case List</sj:a>
+					<li><sj:a id="aCNew" href="%{urlCNew}" targets="formDiv" onclick="menuclicked()">New Case</sj:a></li>
+					<li><sj:a id="aCList" href="%{urlCList}" targets="formDiv" onclick="menuclicked()">Case List</sj:a>
 				</ul>
 			</li>
 			
 			<li>
 				<a href="#">Synchronize</a>
 				<ul>
-					<li><sj:a id="aCNew" href="%{urlCNew}" targets="formDiv">New Case</sj:a></li>
-					<li><sj:a id="aCList" href="%{urlCList}" targets="formDiv">Case List</sj:a>
+					<li><sj:a id="aCNew" href="%{urlCNew}" targets="formDiv" onclick="menuclicked()">New Case</sj:a></li>
+					<li><sj:a id="aCList" href="%{urlCList}" targets="formDiv" onclick="menuclicked()">Case List</sj:a>
 				</ul>
 			</li>
 			
 			<li>
 				<a href="#">Settings</a>
 				<ul>
-					<li><sj:a id="aCNew" href="%{urlCNew}" targets="formDiv">New Case</sj:a></li>
-					<li><sj:a id="aCList" href="%{urlCList}" targets="formDiv">Case List</sj:a>
+					<li><sj:a id="aCNew" href="%{urlCNew}" targets="formDiv" onclick="menuclicked()">New Case</sj:a></li>
+					<li><sj:a id="aCList" href="%{urlCList}" targets="formDiv" onclick="menuclicked()">Case List</sj:a>
 				</ul>
 			</li>
 			
 			<li>
 				<a href="#">Links</a>
 				<ul>
-					<li><sj:a id="aCNew" href="%{urlCNew}" targets="formDiv">New Case</sj:a></li>
-					<li><sj:a id="aCList" href="%{urlCList}" targets="formDiv">Case List</sj:a>
+					<li><sj:a id="aCNew" href="%{urlCNew}" targets="formDiv" onclick="menuclicked()">New Case</sj:a></li>
+					<li><sj:a id="aCList" href="%{urlCList}" targets="formDiv" onclick="menuclicked()">Case List</sj:a>
 				</ul>
 			</li>
 			
@@ -89,7 +91,7 @@
 	<div id="content">
 		<section id="secSearch">
 			<div id="divSearchBox"><s:textfield id="searchbox" onkeypress="return addActivity(this.value, event)"/><br/></div>
-			<div id="divRadio"><s:radio onclick="radioChecked(this.id)" name="radio" list="#{'1':'Database','2':'Document','3':'Report' }"/></div>
+			<div id="divRadio"><s:radio value="1" onclick="radioChecked(this.id)" name="radio" list="#{'1':'Database','2':'Document','3':'Report' }"/></div>
 			<button onclick="displayActivities()">display</button>
 			<button onclick="deleteLocalStorage()">clear</button>
 		</section>
@@ -114,8 +116,9 @@
 		</section>
 		
 		<s:div id="formDiv" />
-	</div>	
-	<footer>
+	</div>
+	
+	<footer id="statusBar">
 		<label>User's Name</label>
 		<button>logout</button>
 	</footer>

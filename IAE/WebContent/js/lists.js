@@ -51,8 +51,8 @@ function displayAnItem(item){
 function addActivity(item, e){
 	//TO DO: add check to make sure that the query
 	//is sent successfully
-	
-	if(e.keyCode === 13){
+	//Search box pressed enter
+	if(e.keyCode === 13 && item !== ""){
 		displayAnItem(item);
 		updateStorage(item);
 	}
