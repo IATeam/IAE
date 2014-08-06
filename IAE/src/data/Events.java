@@ -1,6 +1,6 @@
 package data;
 
-// Generated Jul 28, 2014 4:20:23 PM by Hibernate Tools 3.4.0.CR1
+// Generated Aug 6, 2014 9:58:18 PM by Hibernate Tools 3.4.0.CR1
 
 import java.util.Date;
 
@@ -20,13 +20,15 @@ public class Events implements java.io.Serializable {
 	private Integer updatedUserId;
 	private Integer createdUserId;
 	private Date createdDateTime;
+	private String name;
 
 	public Events() {
 	}
 
 	public Events(Date startTime, Date endTime, Date date, String description,
 			Integer contactLinkId, Integer caseLinkId, Date updatedDateTime,
-			Integer updatedUserId, Integer createdUserId, Date createdDateTime) {
+			Integer updatedUserId, Integer createdUserId, Date createdDateTime,
+			String name) {
 		this.startTime = startTime;
 		this.endTime = endTime;
 		this.date = date;
@@ -37,6 +39,7 @@ public class Events implements java.io.Serializable {
 		this.updatedUserId = updatedUserId;
 		this.createdUserId = createdUserId;
 		this.createdDateTime = createdDateTime;
+		this.name = name;
 	}
 
 	public Integer getId() {
@@ -125,6 +128,14 @@ public class Events implements java.io.Serializable {
 
 	public void setCreatedDateTime(Date createdDateTime) {
 		this.createdDateTime = createdDateTime;
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
 }

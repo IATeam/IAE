@@ -1,6 +1,6 @@
 package data;
 
-// Generated Jul 28, 2014 4:20:23 PM by Hibernate Tools 3.4.0.CR1
+// Generated Aug 6, 2014 9:58:18 PM by Hibernate Tools 3.4.0.CR1
 
 import java.util.Date;
 
@@ -22,7 +22,7 @@ public class Plans implements java.io.Serializable {
 	private Integer authorisedById;
 	private Date authorisedByDate;
 	private String notes;
-	private String updatedDateTime;
+	private Date updatedDateTime;
 	private Integer updatedUserId;
 	private Integer createdUserId;
 
@@ -34,7 +34,7 @@ public class Plans implements java.io.Serializable {
 			Integer reviewFrequencyId, Date providedPlanDate,
 			Date consentSignedDate, Integer supportPersonId,
 			Integer authorisedById, Date authorisedByDate, String notes,
-			String updatedDateTime, Integer updatedUserId, Integer createdUserId) {
+			Date updatedDateTime, Integer updatedUserId, Integer createdUserId) {
 		this.caseId = caseId;
 		this.statusId = statusId;
 		this.createdDateTime = createdDateTime;
@@ -156,11 +156,11 @@ public class Plans implements java.io.Serializable {
 		this.notes = notes;
 	}
 
-	public String getUpdatedDateTime() {
+	public Date getUpdatedDateTime() {
 		return this.updatedDateTime;
 	}
 
-	public void setUpdatedDateTime(String updatedDateTime) {
+	public void setUpdatedDateTime(Date updatedDateTime) {
 		this.updatedDateTime = updatedDateTime;
 	}
 

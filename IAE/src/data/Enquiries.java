@@ -1,6 +1,6 @@
 package data;
 
-// Generated Jul 28, 2014 4:20:23 PM by Hibernate Tools 3.4.0.CR1
+// Generated Aug 6, 2014 9:58:18 PM by Hibernate Tools 3.4.0.CR1
 
 import java.util.Date;
 
@@ -22,6 +22,7 @@ public class Enquiries implements java.io.Serializable {
 	private Date updatedDateTime;
 	private Integer updatedUserId;
 	private Integer parentEnquiryId;
+	private String outOfFlag;
 
 	public Enquiries() {
 	}
@@ -30,7 +31,7 @@ public class Enquiries implements java.io.Serializable {
 			Integer statusId, String description, Integer createdUserId,
 			Date createdDateTime, String inquisitor, String referralBy,
 			String referralTo, Date updatedDateTime, Integer updatedUserId,
-			Integer parentEnquiryId) {
+			Integer parentEnquiryId, String outOfFlag) {
 		this.contactId = contactId;
 		this.enquiryTypeId = enquiryTypeId;
 		this.statusId = statusId;
@@ -43,6 +44,7 @@ public class Enquiries implements java.io.Serializable {
 		this.updatedDateTime = updatedDateTime;
 		this.updatedUserId = updatedUserId;
 		this.parentEnquiryId = parentEnquiryId;
+		this.outOfFlag = outOfFlag;
 	}
 
 	public Integer getId() {
@@ -147,6 +149,14 @@ public class Enquiries implements java.io.Serializable {
 
 	public void setParentEnquiryId(Integer parentEnquiryId) {
 		this.parentEnquiryId = parentEnquiryId;
+	}
+
+	public String getOutOfFlag() {
+		return this.outOfFlag;
+	}
+
+	public void setOutOfFlag(String outOfFlag) {
+		this.outOfFlag = outOfFlag;
 	}
 
 }
