@@ -5,17 +5,17 @@
 		<div class="row">
 			<div class="inputfield six columns">
 				<s:label for="inquisitor" value="Inquisitor:" />
-				<div><s:textfield id="inquisitor" name=""></s:textfield></div>
+				<div><s:textfield id="inquisitor" name="inquisitor"></s:textfield></div>
 			</div>
 			
 			<div class="inputfield five columns">
-				<s:label for="referedBy" value="Referred By:" />
-				<div><s:textfield id="referedBy" name=""></s:textfield></div>
+				<s:label for="referredBy" value="Referred By:" />
+				<div><s:textfield id="referredBy" name="referredBy"></s:textfield></div>
 			</div>
 			
 			<div class="inputfield five columns">
-				<s:label for="referedTo" value="Referred To:" />
-				<div><s:textfield id="referedTo" name=""></s:textfield></div>
+				<s:label for="referredTo" value="Referred To:" />
+				<div><s:textfield id="referredTo" name="referredTo"></s:textfield></div>
 			</div>
 		</div>
 	</fieldset>

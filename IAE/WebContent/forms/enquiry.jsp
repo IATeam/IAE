@@ -14,34 +14,19 @@
 
 </head>
 <body>
-	<header class="imageContainer">
-		<span class="headerText">Enquiry Form</span>
-	</header>
-	 <div class="form container">
+	<div class="form container">
+	
+	
+	<section class="imageContainer">
+		<div class="row">
+			<img class="seven columns" src="<s:url value='/resources/images/logo.png'/>"/>
+			<div class="headerText nine columns">
+				<s:text name="formTitle" />
+			</div>
+		</div>
+	</section>
 		
-		<fieldset id="formStatus">
-			<s:div>
-				<s:label for="createdDate" value="Created Date:" />
-				<s:text id="createdDate" name="">10/04/2014</s:text>
-	        	
-				<s:label for="lastUpdatedOn" value="Last Updated On:" />
-				<s:text id="lastUpdatedOn" name="">15/05/2014</s:text>
-				<br>
-				<s:label for="createdBy" value="Created By:" />
-				<s:text id="createdBy" name="">Michael Hall</s:text>
-				
-				<s:label for="lastUpdatedBy" value="Last Updated By:" />
-				<s:text id="lastUpdatedBy" name="">Michael Hall</s:text>
-			</s:div>
-			
-			<s:div>
-				<s:select cssClass="four columns" list="#{'1':'Flag (Attention)'}" id="issueType" name="" />
-				<s:select cssClass="four columns" list="#{'1':'Flag (Attention)'}" id="issueType" name="" />
-				<s:label for="enquiryID" value="Case#:" />
-				<s:text id="enquiryID" name="">010</s:text>
-			</s:div>
-			
-		</fieldset>
+		<%@include file="includes/formStatus.jsp" %>
 		<%@include file="includes/personalDetails.jsp" %>
 		<%@include file="includes/address.jsp" %>
 		<%@include file="includes/referral.jsp" %>
@@ -49,6 +34,7 @@
 		<%@include file="includes/disability.jsp" %>
 		<%@include file="includes/issues.jsp" %>
 		<%@include file="includes/linkedEnquiries.jsp" %>
+		
 		<footer>
 			<section>
 				<input type="button" value="Cancel" />
@@ -60,6 +46,7 @@
 				<s:submit type="submit" cssClass="button" value="Save" />
 			</section>
 		</footer>
+	</div>
 	</div>		
 </body>
 </html>

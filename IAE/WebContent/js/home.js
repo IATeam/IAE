@@ -17,5 +17,7 @@
  	
  	});
  	
+ 	//search bar is greyed out unless on focus
+ 	//$('#dvSearchBox').blur()
  	
  });

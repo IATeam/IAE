@@ -8,7 +8,7 @@
 <head>
 <script src="<s:url value='/js/jquery/jquery-1.11.1.min.js' encode='false' includeParams='none'/>"></script>
 <script src="<s:url value='/js/jquery/jquery-ui.min.js' encode='false' includeParams='none'/>"></script>
-
+<link href="<s:url value='/styles/skeleton.css' encode='false' includeParams='none'/>" rel="stylesheet" type="text/css" media="all"/>
 <link href="<s:url value='/styles/login.css' encode='false' includeParams='none'/>" rel="stylesheet" type="text/css" media="all"/>
 <script src="//code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
 <script src="<s:url value='/js/login.js' encode='false' includeParams='none'/>"></script>
@@ -20,16 +20,20 @@
 	<header>
 		<img src="<s:url value='/resources/images/logo.png'/>"/>
 	</header>
-	<section id="secLogin">
-		<s:form action="login">
-			<div id="divLogin">
-				<s:textfield placeholder='enter your USERNAME' id="username" label="Username" key="username" onkeydown="return unameEntered(event)"/>
-				<s:password placeholder='enter your PASSWORD' id="password" label="Password" key="password"/>
-			</div>
-			<input type="button" value="Reset" onclick="resetPressed()">
-		</s:form>
-		 
-	</section>
+	<div class="container">
+	
+		<section id="secLogin">
+			<s:form action="login">
+				<div id="divLogin">
+					<s:textfield placeholder='enter your USERNAME' id="username" label="Username" key="username" onkeydown="return unameEntered(event)"/>
+					<s:password placeholder='enter your PASSWORD' id="password" label="Password" key="password"/>
+				</div>
+				<input type="button" value="Reset" onclick="resetPressed()">
+			</s:form>
+			 
+		</section>
+	</div>
+	
 	
 	
 	

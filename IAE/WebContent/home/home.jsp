@@ -7,7 +7,6 @@
 <html>
 <head>
 <script src="<s:url value='/js/jquery/jquery-ui.min.js' encode='false' includeParams='none'/>"></script>
-
 <meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
 <s:head/>
 <sj:head/>
@@ -20,18 +19,32 @@
 </head>
 <body>
 	<!-- List of urls to called for from the menu -->
-	<s:url id="urlEList" namespace="/enquiry" action="enquiryList"></s:url>
-	<s:url id="urlENew" namespace="/enquiry" action="enquiry"></s:url>
-	<s:url id="urlCList" namespace="/case" value="caseList"></s:url>
-	<s:url id="urlCNew" namespace="/case" action="newCase"></s:url>
+	<s:url id="urlEList" namespace="/enquiry" action="enquiryList">
+		<s:param name="formTitle">Enquiry List</s:param>
+	</s:url>
+	<s:url var="urlENew" namespace="/enquiry" action="newEnquiry">
+		<s:param name="formTitle">New Enquiry</s:param>
+	</s:url>
+	<s:url var="urlEExisting" namespace="/enquiry" action="getEnquiry">
+		<s:param name="formTitle">Existing Enquiry</s:param>
+	</s:url>
+	<s:url id="urlCList" namespace="/case" value="caseList">
+		<s:param name="formTitle">Case List</s:param>
+	</s:url>
+	<s:url id="urlCNew" namespace="/case" action="newCase">
+		<s:param name="formTitle">New Case</s:param>
+	</s:url>
 	
+	
+	<!-- Navigation -->
 	<nav>
 		<ul>
-			<li><a id="aHome" href="#">Illawarra Advocacy</a></li>
+			<li><a id="aHome"href="#">Illawarra Advocacy</a></li>
 			
-			<li><a id="aE" href="#">Enquiry</a>
+			<li><a id="aE"href="#">Enquiry</a>
 				<ul>
 					<li><sj:a id="aENew" href="%{urlENew}" targets="formDiv" onclick="menuclicked()">New Enquiry</sj:a></li>
+					<li><sj:a id="aEExisting" href="%{urlEExisting}" targets="formDiv" onclick="menuclicked()">Existing Enquiry Test</sj:a></li>
 					<li><sj:a id="aEList" href="%{urlEList}" targets="formDiv" onclick="menuclicked()">Enquiry List</sj:a>
 				</ul>
 			</li>
@@ -43,7 +56,7 @@
 				</ul>
 			</li>
 			
-			<li>
+			<li >
 				<a href="#">Report</a>
 				<ul>
 					<li><sj:a id="aCNew" href="%{urlCNew}" targets="formDiv" onclick="menuclicked()">New Case</sj:a></li>
@@ -73,7 +86,7 @@
 				</ul>
 			</li>
 			
-			<li>
+			<li class="one columns" >
 				<a href="#">Links</a>
 				<ul>
 					<li><sj:a id="aCNew" href="%{urlCNew}" targets="formDiv" onclick="menuclicked()">New Case</sj:a></li>

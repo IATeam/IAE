@@ -4,7 +4,7 @@ body{
 	background-color: #404040;
 	color: white;
     padding: 0;
-    border: 0;
+    //border: 0;
     margin: 0;
     overflow-Y: scroll;
     height: 100%;
@@ -28,7 +28,7 @@ header img{
 /* Navigation */
 nav{
 	
-    background-color: blue;
+    
     height: 30px; 
     width: 100%;
 }
@@ -51,6 +51,7 @@ ul li {
   margin-right: -4px;
   position: relative;
   padding: 2px 20px;
+  margin-left: 0;
   background: #fff;
   cursor: pointer;
   -webkit-transition: all 0.2s;
@@ -61,7 +62,7 @@ ul li {
 }
 ul li:hover {
   background: #555;
-  color: #fff;
+  color: #fff; 
 }
 
 ul li ul {
@@ -80,7 +81,7 @@ ul li ul {
   -moz-transition: opacity 0.2s;
   -ms-transition: opacity 0.2s;
   -o-transition: opacity 0.2s;
-  -transition: opacity 0.2s;
+  -transition: opacity 0.2s; 
 }
 
 ul li ul li { 
@@ -91,7 +92,7 @@ ul li ul li {
 }
 
 ul li ul li:hover { 
-	background: #666; 
+	background: #666;
 }
 
 ul li:hover ul {
@@ -101,8 +102,8 @@ ul li:hover ul {
 }
 
 ul a, ul ul a{
-    text-decoration: none;
-    color: black;
+	text-decoration: none;
+	color: black;
 }
 
 
@@ -222,6 +223,9 @@ ul a, ul ul a{
     margin: 4px;
 }
 
+#formDiv{
+	margin: 0;
+}
 
 /* #formDiv{
 	width: 100%;

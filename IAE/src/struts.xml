@@ -26,13 +26,17 @@
     
     <!-- Enquiry Forms -->
     <package name="enquiry" namespace="/enquiry" extends="struts-default">
-    	<action name="*" class="action.enquiry.EnquiryAction">
-    		<result name="success">/forms/{1}.jsp</result>
+    	<action name="getEnquiry" class="action.enquiry.EnquiryAction" method="getEnquiry">
+    		<result name="success">/forms/enquiry.jsp</result>
+    	</action>
+    	<action name="newEnquiry" class="action.enquiry.EnquiryAction" method="newEnquiry">
+    		<result name="success">/forms/enquiry.jsp</result>
     	</action>
     </package>
     
     <!-- Case Forms -->
     <package name="case" namespace="/case" extends="struts-default">
+    	
     	<action name="*" class="action.cases.CaseAction">
     		<result name="success">/forms/{1}.jsp</result>
     	</action>
