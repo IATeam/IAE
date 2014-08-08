@@ -14,7 +14,7 @@
 
 </head>
 <body>
-	<div class="form container">
+	<div class="form container">  
 	
 	
 	<section class="imageContainer">
