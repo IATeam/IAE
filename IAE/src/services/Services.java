@@ -70,7 +70,7 @@ public class Services {
 		getEventById(eventId).getPeople().remove(getPersonById(personId));
 	}
 	
-	public void addPersonFromEvent(int personId, int eventId) {
+	public void addPersonToEvent(int personId, int eventId) {
 		getEventById(eventId).getPeople().add(getPersonById(personId));
 	}
 	

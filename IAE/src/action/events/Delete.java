@@ -1,4 +1,4 @@
-package action.example;
+package action.events;
 
 import data.Event;
 import action.base.BaseAction;
