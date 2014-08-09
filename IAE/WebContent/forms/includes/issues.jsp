@@ -1,6 +1,6 @@
-<label>Issues</label>
+<h3 class="sixteen columns" style="float:none;">Issues</h3>
 <s:div cssClass="greybackground">
-	<s:if test="" >
+	<%-- <s:if test="" >
 		<s:iterator value="">
 			<s:div cssClass="fieldsetborder">
 				<fieldset>
@@ -12,20 +12,29 @@
 				</fieldset>
 			</s:div>
 		</s:iterator>
-	</s:if>
-	<ul id="ulistIssues">
+	</s:if> --%>
+	
+	<article id="artIssue" class="row">
+		<section class="secIssue sixteen columns curveBorder">
+			<s:select cssClass="four columns" list="#{'1':'Issues Types (Attention)'}" id="issueType" name="" />
+			<div class="textarea eleven columns omega">
+				<s:label for="issuedescription" value="Issue Description:" />
+				<s:textarea id="" cssClass="oneLineTextArea" name="" /> 
+			</div>
+		</section>
+		
+	</article>
+	
+	
+	<!-- <ul id="ulistIssues">
 		<li class="list">
 			<s:div cssClass="fieldsetborder">
 				<fieldset>
-					<s:select cssClass="four columns" list="#{'1':'Issues Types (Attention)'}" id="issueType" name="" />
-					<div class="textarea ten columns">
-						<s:label for="issuedescription" value="Issue Description:" />
-						<s:textarea id="" cssClass="oneLineTextArea"></s:textarea> 
-					</div>
+					
 				</fieldset>
 			</s:div>
 		</li>
-	</ul>
+	</ul> -->
 	<div class="divbuttons">
 		<input type="button" id="btnNewIssue" value="New Issue" />
 	</div>
@@ -33,7 +42,7 @@
 	<script>
 	$(function(){
 		$("#btnNewIssue").click(function(){ 
-			$("#ulistIssues li").first().clone().appendTo("#ulistIssues");
+			$(".secIssue").first().clone().appendTo("#artIssue");
 		});
 	});
 	</script>

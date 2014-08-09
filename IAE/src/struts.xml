@@ -32,6 +32,14 @@
     	<action name="newEnquiry" class="action.enquiry.EnquiryAction" method="newEnquiry">
     		<result name="success">/forms/enquiry.jsp</result>
     	</action>
+    	
+    	<action name="getLinkedEnquiry" class="action.enquiry.EnquiryAction" method="getLinkedEnquiry">
+    		<result name="success">/forms/displayLinkedEnquiry.jsp</result>
+    	</action>
+    	
+    	<action name="*" class="action.enquiry.EnquiryAction" method="{1}">
+    		<result name="success">/forms/{1}.jsp</result>
+    	</action>
     </package>
     
     <!-- Case Forms -->

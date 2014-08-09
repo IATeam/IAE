@@ -5,6 +5,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 import action.base.BaseAction;
+ 
+/*
+ * Created By Quang Nhan,
+ * Editor: David Forbes, Quang Nhan
+ * Creaed On: 14/7/14
+ * Last Updated On: 9/8/14
+ * Description: Action class for enquiries
+ */
 
 public class EnquiryAction extends BaseAction{
 	
@@ -77,6 +85,12 @@ public class EnquiryAction extends BaseAction{
 	
 	public String newEnquiry(){
 		activateLists();
+		return SUCCESS;
+	}
+	
+	public String getLinkedEnquiry(){
+		activateLists();
+		System.out.println("linked E");
 		return SUCCESS;
 	}
 
