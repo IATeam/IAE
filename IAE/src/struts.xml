@@ -36,9 +36,8 @@
     
     <!-- Case Forms -->
     <package name="case" namespace="/case" extends="struts-default">
-    	
-    	<action name="*" class="action.cases.CaseAction">
-    		<result name="success">/forms/{1}.jsp</result>
+    	<action name="newCase" class="action.cases.CaseAction" method="newCase">
+    		<result name="success">/forms/case.jsp</result>
     	</action>
     </package>
     
