@@ -20,5 +20,13 @@
         <property name="displayOrder" type="java.lang.Integer">
             <column name="display_order" />
         </property>
+        
+        <!--  One to many relationship  -->
+  		<set fetch="select" inverse="true" lazy="true" name="contactsSet" sort="unsorted" table="Contacts">
+		<key>
+			<column name="danger_flag_id" not-null="true"/>
+		</key>
+		<one-to-many class="data.Contacts"/>
+		</set>
     </class>
 </hibernate-mapping>

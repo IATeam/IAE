@@ -1,69 +1,103 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated Aug 6, 2014 9:58:18 PM by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
-    <class name="data.Contacts" table="Contacts" catalog="testdb">
-        <id name="id" type="java.lang.Integer">
-            <column name="id" />
-            <generator class="identity" />
-        </id>
-        <property name="titleId" type="java.lang.Integer">
-            <column name="title_id" />
-        </property>
-        <property name="firstname" type="string">
-            <column name="firstname" />
-        </property>
-        <property name="lastname" type="string">
-            <column name="lastname" />
-        </property>
-        <property name="othername" type="string">
-            <column name="othername" />
-        </property>
-        <property name="genderId" type="java.lang.Integer">
-            <column name="gender_id" />
-        </property>
-        <property name="contactTypeId" type="java.lang.Integer">
-            <column name="contact_type_id" />
-        </property>
-        <property name="homephone" type="string">
-            <column name="homephone" />
-        </property>
-        <property name="workphone" type="string">
-            <column name="workphone" />
-        </property>
-        <property name="mobilephone" type="string">
-            <column name="mobilephone" />
-        </property>
-        <property name="email" type="string">
-            <column name="email" />
-        </property>
-        <property name="accommodationId" type="java.lang.Integer">
-            <column name="accommodation_id" />
-        </property>
-        <property name="accommodationComment" type="string">
-            <column name="accommodation_comment" />
-        </property>
-        <property name="employmentId" type="java.lang.Integer">
-            <column name="employment_id" />
-        </property>
-        <property name="employmentComment" type="string">
-            <column name="employment_comment" />
-        </property>
-        <property name="culturalBackgroundId" type="java.lang.Integer">
-            <column name="cultural_background_id" />
-        </property>
-        <property name="culturalBackgroundComment" type="string">
-            <column name="cultural_background_comment" />
-        </property>
-        <property name="dangerFlagId" type="java.lang.Integer">
-            <column name="danger_flag_id" />
-        </property>
-        <property name="identification" type="string">
-            <column name="identification" />
-        </property>
-        <property name="dob" type="date">
-            <column name="DOB" length="10" />
-        </property>
-    </class>
+ <class catalog="testdb" name="data.Contacts" table="Contacts">
+  <id name="id" type="java.lang.Integer">
+   <column name="id"/>
+   <generator class="identity"/>
+  </id>
+  <!-- <property generated="never" lazy="false" name="titleId" type="java.lang.Integer">
+   <column name="title_id"/>
+  </property> -->
+  <property generated="never" lazy="false" name="firstname" type="string">
+   <column name="firstname"/>
+  </property>
+  <property generated="never" lazy="false" name="lastname" type="string">
+   <column name="lastname"/>
+  </property>
+  <property generated="never" lazy="false" name="othername" type="string">
+   <column name="othername"/>
+  </property>
+  <!-- <property generated="never" lazy="false" name="genderId" type="java.lang.Integer">
+   <column name="gender_id"/>
+  </property> -->
+  <!-- <property generated="never" lazy="false" name="contactTypeId" type="java.lang.Integer">
+   <column name="contact_type_id"/>
+  </property> -->
+  <property generated="never" lazy="false" name="homephone" type="string">
+   <column name="homephone"/>
+  </property>
+  <property generated="never" lazy="false" name="workphone" type="string">
+   <column name="workphone"/>
+  </property>
+  <property generated="never" lazy="false" name="mobilephone" type="string">
+   <column name="mobilephone"/>
+  </property>
+  <property generated="never" lazy="false" name="email" type="string">
+   <column name="email"/>
+  </property>
+  <!-- <property generated="never" lazy="false" name="accommodationId" type="java.lang.Integer">
+   <column name="accommodation_id"/>
+  </property> -->
+  <property generated="never" lazy="false" name="accommodationComment" type="string">
+   <column name="accommodation_comment"/>
+  </property>
+  <!-- <property generated="never" lazy="false" name="employmentId" type="java.lang.Integer">
+   <column name="employment_id"/>
+  </property> -->
+  <property generated="never" lazy="false" name="employmentComment" type="string">
+   <column name="employment_comment"/>
+  </property>
+  <!-- <property generated="never" lazy="false" name="culturalBackgroundId" type="java.lang.Integer">
+   <column name="cultural_background_id"/>
+  </property> -->
+  <property generated="never" lazy="false"
+   name="culturalBackgroundComment" type="string">
+   <column name="cultural_background_comment"/>
+  </property>
+  <!-- <property generated="never" lazy="false" name="dangerFlagId" type="java.lang.Integer">
+   <column name="danger_flag_id"/>
+  </property> -->
+  <property generated="never" lazy="false" name="identification" type="string">
+   <column name="identification"/>
+  </property>
+  <property generated="never" lazy="false" name="dob" type="date">
+   <column length="10" name="DOB"/>
+  </property>
+  
+  <!-- Many to one relationship -->
+  <many-to-one class="data.AccommodationTypes" name="accommodation">
+  	<column name="accommodation_id" not-null="false"/>
+  </many-to-one>
+  <many-to-one class="data.ContactTypes" name="contactType">
+   <column name="contact_type_id" not-null="false"/>
+  </many-to-one>
+  <many-to-one class="data.TitleTypes" name="titleType">
+   <column name="title_id" not-null="false"/>
+  </many-to-one>
+  <many-to-one class="data.GenderTypes" name="genderType">
+   <column name="gender_id" not-null="false"/>
+  </many-to-one>
+  <many-to-one class="data.CulturalBackgroundTypes" name="culturalBackground">
+   <column name="cultural_background_id" not-null="false"/>
+  </many-to-one>
+  <many-to-one class="data.EmploymentTypes" name="employmentType">
+   <column name="employment_id" not-null="false"/>
+  </many-to-one>
+  <many-to-one class="data.DangerTypes" name="dangerType">
+   <column name="danger_flag_id" not-null="false"/>
+  </many-to-one>
+  
+  <!--  One to many relationship  -->
+  <set fetch="select" inverse="true" lazy="true" name="addressesSet" sort="unsorted" table="Addresses">
+   <key>
+    <column name="contact_id" not-null="true"/>
+   </key>
+   <one-to-many class="data.Addresses"/>
+  </set>
+ </class>
+ 
+ <sql-query name="findById">select * from Contacts where id = :p_id</sql-query>
 </hibernate-mapping>

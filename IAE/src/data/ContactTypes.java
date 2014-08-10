@@ -1,5 +1,7 @@
 package data;
 
+import java.util.Set;
+
 // Generated Aug 6, 2014 9:58:18 PM by Hibernate Tools 3.4.0.CR1
 
 /**
@@ -10,6 +12,7 @@ public class ContactTypes implements java.io.Serializable {
 	private Integer id;
 	private String contactTypeName;
 	private String contactTypeDescription;
+	private Set<Contacts> contactsSet;
 
 	public ContactTypes() {
 	}
@@ -41,6 +44,14 @@ public class ContactTypes implements java.io.Serializable {
 
 	public void setContactTypeDescription(String contactTypeDescription) {
 		this.contactTypeDescription = contactTypeDescription;
+	}
+
+	public Set<Contacts> getContactsSet() {
+		return contactsSet;
+	}
+
+	public void setContactsSet(Set<Contacts> contactsSet) {
+		this.contactsSet = contactsSet;
 	}
 
 }
