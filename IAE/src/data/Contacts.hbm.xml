@@ -69,25 +69,25 @@
   
   <!-- Many to one relationship -->
   <many-to-one class="data.AccommodationTypes" name="accommodation">
-  	<column name="accommodation_id" not-null="false"/>
+  	<column name="accommodation_id" not-null="true"/>
   </many-to-one>
   <many-to-one class="data.ContactTypes" name="contactType">
-   <column name="contact_type_id" not-null="false"/>
+   <column name="contact_type_id" not-null="true"/>
   </many-to-one>
   <many-to-one class="data.TitleTypes" name="titleType">
-   <column name="title_id" not-null="false"/>
+   <column name="title_id" not-null="true"/>
   </many-to-one>
   <many-to-one class="data.GenderTypes" name="genderType">
-   <column name="gender_id" not-null="false"/>
+   <column name="gender_id" not-null="true"/>
   </many-to-one>
   <many-to-one class="data.CulturalBackgroundTypes" name="culturalBackground">
-   <column name="cultural_background_id" not-null="false"/>
+   <column name="cultural_background_id" not-null="true"/>
   </many-to-one>
   <many-to-one class="data.EmploymentTypes" name="employmentType">
-   <column name="employment_id" not-null="false"/>
+   <column name="employment_id" not-null="true"/>
   </many-to-one>
   <many-to-one class="data.DangerTypes" name="dangerType">
-   <column name="danger_flag_id" not-null="false"/>
+   <column name="danger_flag_id" not-null="true"/>
   </many-to-one>
   
   <!--  One to many relationship  -->
@@ -97,6 +97,19 @@
    </key>
    <one-to-many class="data.Addresses"/>
   </set>
+  
+  <set fetch="select" inverse="true" lazy="true" name="enquiriesSet" sort="unsorted" table="Enquiries">
+  	<key>
+  		<column name="contact_id" not-null="true"/>
+  	</key>
+  	<one-to-many class="data.Enquiries"/>
+  </set>
+ 
+	 <!-- Many-to-many relationship -->
+	 <set name="disabilitiesSet" table="Client_Disabilities" inverse="false" lazy="true" fetch="select" cascade="all">
+	 	<key column="contact_id"/>
+	 	<many-to-many column="disability_id" class="data.DisabilityTypes"/>
+	 </set>
  </class>
  
  <sql-query name="findById">select * from Contacts where id = :p_id</sql-query>

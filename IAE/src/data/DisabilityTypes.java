@@ -1,5 +1,8 @@
 package data;
 
+import java.util.HashSet;
+import java.util.Set;
+
 // Generated Aug 6, 2014 9:58:18 PM by Hibernate Tools 3.4.0.CR1
 
 /**
@@ -10,37 +13,75 @@ public class DisabilityTypes implements java.io.Serializable {
 	private Integer id;
 	private String disabilityName;
 	private String disabilityDescription;
-
+	private Set<Contacts> contactsSet = new HashSet<Contacts>();
+	/**
+	 * 
+	 */
 	public DisabilityTypes() {
+		// TODO Auto-generated constructor stub
 	}
-
-	public DisabilityTypes(String disabilityName, String disabilityDescription) {
+	/**
+	 * @param id
+	 * @param disabilityName
+	 * @param disabilityDescription
+	 * @param contactsSet
+	 */
+	public DisabilityTypes(Integer id, String disabilityName,
+			String disabilityDescription, Set<Contacts> contactsSet) {
+		this.id = id;
 		this.disabilityName = disabilityName;
 		this.disabilityDescription = disabilityDescription;
+		this.contactsSet = contactsSet;
 	}
-
+	/**
+	 * @return the id
+	 */
 	public Integer getId() {
-		return this.id;
+		return id;
 	}
-
+	/**
+	 * @param id the id to set
+	 */
 	public void setId(Integer id) {
 		this.id = id;
 	}
-
+	/**
+	 * @return the disabilityName
+	 */
 	public String getDisabilityName() {
-		return this.disabilityName;
+		return disabilityName;
 	}
-
+	/**
+	 * @param disabilityName the disabilityName to set
+	 */
 	public void setDisabilityName(String disabilityName) {
 		this.disabilityName = disabilityName;
 	}
-
+	/**
+	 * @return the disabilityDescription
+	 */
 	public String getDisabilityDescription() {
-		return this.disabilityDescription;
+		return disabilityDescription;
 	}
-
+	/**
+	 * @param disabilityDescription the disabilityDescription to set
+	 */
 	public void setDisabilityDescription(String disabilityDescription) {
 		this.disabilityDescription = disabilityDescription;
 	}
+	/**
+	 * @return the contactsSet
+	 */
+	public Set<Contacts> getContactsSet() {
+		return contactsSet;
+	}
+	/**
+	 * @param contactsSet the contactsSet to set
+	 */
+	public void setContactsSet(Set<Contacts> contactsSet) {
+		this.contactsSet = contactsSet;
+	}
+
+	
 
 }

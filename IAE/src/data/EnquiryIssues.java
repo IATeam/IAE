@@ -1,5 +1,8 @@
 package data;
 
+import java.util.HashSet;
+import java.util.Set;
+
 // Generated Aug 6, 2014 9:58:18 PM by Hibernate Tools 3.4.0.CR1
 
 /**
@@ -11,46 +14,74 @@ public class EnquiryIssues implements java.io.Serializable {
 	private Integer enquiryId;
 	private Integer issueId;
 	private String comment;
-
+	/**
+	 * 
+	 */
 	public EnquiryIssues() {
+		// TODO Auto-generated constructor stub
 	}
-
-	public EnquiryIssues(Integer enquiryId, Integer issueId, String comment) {
+	/**
+	 * @param id
+	 * @param enquiryId
+	 * @param issueId
+	 * @param comment
+	 */
+	public EnquiryIssues(Integer id, Integer enquiryId, Integer issueId,
+			String comment) {
+		this.id = id;
 		this.enquiryId = enquiryId;
 		this.issueId = issueId;
 		this.comment = comment;
 	}
-
+	/**
+	 * @return the id
+	 */
 	public Integer getId() {
-		return this.id;
+		return id;
 	}
-
+	/**
+	 * @param id the id to set
+	 */
 	public void setId(Integer id) {
 		this.id = id;
 	}
-
+	/**
+	 * @return the enquiryId
+	 */
 	public Integer getEnquiryId() {
-		return this.enquiryId;
+		return enquiryId;
 	}
-
+	/**
+	 * @param enquiryId the enquiryId to set
+	 */
 	public void setEnquiryId(Integer enquiryId) {
 		this.enquiryId = enquiryId;
 	}
-
+	/**
+	 * @return the issueId
+	 */
 	public Integer getIssueId() {
-		return this.issueId;
+		return issueId;
 	}
-
+	/**
+	 * @param issueId the issueId to set
+	 */
 	public void setIssueId(Integer issueId) {
 		this.issueId = issueId;
 	}
-
+	/**
+	 * @return the comment
+	 */
 	public String getComment() {
-		return this.comment;
+		return comment;
 	}
-
+	/**
+	 * @param comment the comment to set
+	 */
 	public void setComment(String comment) {
 		this.comment = comment;
 	}
+
+	
 
 }

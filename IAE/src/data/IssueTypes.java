@@ -1,5 +1,8 @@
 package data;
 
+import java.util.HashSet;
+import java.util.Set;
+
 // Generated Aug 6, 2014 9:58:18 PM by Hibernate Tools 3.4.0.CR1
 
 /**
@@ -10,41 +13,85 @@ public class IssueTypes implements java.io.Serializable {
 	private Integer id;
 	private String issueName;
 	private String issueDescription;
+	private Set<Enquiries> enquiriesSet = new HashSet<Enquiries>();
 
+	
+
+	/**
+	 * 
+	 */
 	public IssueTypes() {
+		// TODO Auto-generated constructor stub
 	}
 
-	public IssueTypes(String issueName) {
-		this.issueName = issueName;
-	}
-
-	public IssueTypes(String issueName, String issueDescription) {
+	/**
+	 * @param id
+	 * @param issueName
+	 * @param issueDescription
+	 * @param enquiriesSet
+	 */
+	public IssueTypes(Integer id, String issueName, String issueDescription,
+			Set<Enquiries> enquiriesSet) {
+		this.id = id;
 		this.issueName = issueName;
 		this.issueDescription = issueDescription;
+		this.enquiriesSet = enquiriesSet;
 	}
 
+	/**
+	 * @return the id
+	 */
 	public Integer getId() {
-		return this.id;
+		return id;
 	}
 
+	/**
+	 * @param id the id to set
+	 */
 	public void setId(Integer id) {
 		this.id = id;
 	}
 
+	/**
+	 * @return the issueName
+	 */
 	public String getIssueName() {
-		return this.issueName;
+		return issueName;
 	}
 
+	/**
+	 * @param issueName the issueName to set
+	 */
 	public void setIssueName(String issueName) {
 		this.issueName = issueName;
 	}
 
+	/**
+	 * @return the issueDescription
+	 */
 	public String getIssueDescription() {
-		return this.issueDescription;
+		return issueDescription;
 	}
 
+	/**
+	 * @param issueDescription the issueDescription to set
+	 */
 	public void setIssueDescription(String issueDescription) {
 		this.issueDescription = issueDescription;
+	}
+
+	/**
+	 * @return the enquiriesSet
+	 */
+	public Set<Enquiries> getEnquiriesSet() {
+		return enquiriesSet;
+	}
+
+	/**
+	 * @param enquiriesSet the enquiriesSet to set
+	 */
+	public void setEnquiriesSet(Set<Enquiries> enquiriesSet) {
+		this.enquiriesSet = enquiriesSet;
 	}
 
 }

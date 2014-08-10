@@ -14,5 +14,11 @@
         <property name="disabilityDescription" type="string">
             <column name="disability_description" />
         </property>
+        
+        <!-- Many-to-many relationship -->
+        <set name="contactsSet" table="Client_Disabilities" inverse="true" lazy="true" fetch="select">
+        	<key column="disability_id"/>
+        	<many-to-many column="contact_id" class="data.ClientDisabilities"/>
+        </set>
     </class>
 </hibernate-mapping>
