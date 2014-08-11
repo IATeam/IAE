@@ -1,8 +1,8 @@
 package action.login;
 
-import com.opensymphony.xwork2.Action;
+import action.base.BaseAction;
 
-public class LoginAction implements Action {
+public class LoginAction extends BaseAction {
 
 	private String username;
 	private String password;

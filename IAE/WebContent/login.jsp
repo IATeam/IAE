@@ -35,9 +35,6 @@
 	</div>
 	
 	
-	
-	
-	
 	<script>
 		$('#password').hide();
 	</script>

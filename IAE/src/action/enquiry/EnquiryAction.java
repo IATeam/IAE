@@ -5,6 +5,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 import action.base.BaseAction;
+ 
+/*
+ * Created By Quang Nhan,
+ * Editor: David Forbes, Quang Nhan
+ * Creaed On: 14/7/14
+ * Last Updated On: 9/8/14
+ * Description: Action class for enquiries
+ */
+
 
 public class EnquiryAction extends BaseAction{
 	
@@ -79,11 +88,22 @@ public class EnquiryAction extends BaseAction{
 		activateLists();
 		return SUCCESS;
 	}
+	
+	public String getLinkedEnquiry(){
+		activateLists();
+		System.out.println("linked E");
+		return SUCCESS;
+	}
 
 	public String getEnquiry(){
 		System.out.println("get (0iodfodf enquiry");
 		activateLists();
 		setAllFields();
+		return SUCCESS;
+	}
+	
+	public String validateEnquiry(){
+		System.out.println("in vlaidte");
 		return SUCCESS;
 	}
 	
@@ -119,7 +139,7 @@ public class EnquiryAction extends BaseAction{
 		//referrals
 		setReferredBy("Georgiei");
 	}
-	
+	 
 	private void activateLists(){
 		List<String> tit = new ArrayList<String>();
 		tit.add("Mr");

@@ -23,16 +23,31 @@
     <constant name="struts.ui.theme" value="simple" />
     <constant name="struts.ui.templateDir" value="template" />
     <constant name="struts.ui.templateSuffix" value="ftl" />
+  	
+  	<include file="login.xml"/>
+    
     
     <!-- Enquiry Forms -->
     <package name="enquiry" namespace="/enquiry" extends="struts-default">
+    
     	<action name="getEnquiry" class="action.enquiry.EnquiryAction" method="getEnquiry">
     		<result name="success">/forms/enquiry.jsp</result>
     	</action>
     	<action name="newEnquiry" class="action.enquiry.EnquiryAction" method="newEnquiry">
     		<result name="success">/forms/enquiry.jsp</result>
     	</action>
+    	
+    	<action name="getLinkedEnquiry" class="action.enquiry.EnquiryAction" method="getLinkedEnquiry">
+    		<result name="success">/forms/displayLinkedEnquiry.jsp</result>
+    	</action>
+    	
+    	<action name="*" class="action.enquiry.EnquiryAction" method="{1}">
+    		<result name="success">/forms/{1}.jsp</result>
+    	</action>
+    	 
     </package>
+    
+     
     
     <!-- Case Forms -->
     <package name="case" namespace="/case" extends="struts-default">
@@ -49,6 +64,6 @@
     	</action>
     </package>
     
-    <include file="login.xml"/>
+    
     
 </struts>
