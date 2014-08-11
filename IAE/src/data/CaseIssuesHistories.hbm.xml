@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Aug 6, 2014 9:58:18 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="data.CaseIssuesHistories" table="Case_Issues_Histories" catalog="testdb">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <timestamp name="timestamp" column="TIMESTAMP" />
+        <property name="issueId" type="int">
+            <column name="issue_id" not-null="true" />
+        </property>
+        <property name="action" type="string">
+            <column name="action" length="10" not-null="true" />
+        </property>
+        <property name="caseId" type="java.lang.Integer">
+            <column name="case_id" />
+        </property>
+        <property name="oldIssueTypeId" type="java.lang.Integer">
+            <column name="old_issue_type_id" />
+        </property>
+        <property name="newIssueTypeId" type="java.lang.Integer">
+            <column name="new_issue_type_id" />
+        </property>
+        <property name="oldComments" type="string">
+            <column name="old_comments" />
+        </property>
+        <property name="newComments" type="string">
+            <column name="new_comments" />
+        </property>
+        <property name="oldStatusId" type="java.lang.Integer">
+            <column name="old_status_id" />
+        </property>
+        <property name="newStatusId" type="java.lang.Integer">
+            <column name="new_status_id" />
+        </property>
+        <property name="oldCompletedDate" type="date">
+            <column name="old_completed_date" length="10" />
+        </property>
+        <property name="newCompletedDate" type="date">
+            <column name="new_completed_date" length="10" />
+        </property>
+        <property name="createdUserId" type="java.lang.Integer">
+            <column name="created_user_id" />
+        </property>
+    </class>
+</hibernate-mapping>

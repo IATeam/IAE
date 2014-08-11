@@ -4,6 +4,7 @@ package data;
 
 import java.util.Date;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -41,6 +42,8 @@ public class Contacts implements java.io.Serializable {
 	private Set<Addresses> addressesSet;
 	private Set<DisabilityTypes> disabilitiesSet = new HashSet<DisabilityTypes>();
 	private Set<Enquiries> enquiriesSet;
+//	private List<IndividualCases> individualCasesList;
+	private Set<IndividualCases> individualCasesSet;
 
 	/**
 	 * 
@@ -385,6 +388,38 @@ public class Contacts implements java.io.Serializable {
 	 */
 	public void setEnquiriesSet(Set<Enquiries> enquiriesSet) {
 		this.enquiriesSet = enquiriesSet;
+	}
+
+//
+//	/**
+//	 * @return the individualCasesList
+//	 */
+//	public List<IndividualCases> getIndividualCasesList() {
+//		return individualCasesList;
+//	}
+//
+//
+//	/**
+//	 * @param individualCasesList the individualCasesList to set
+//	 */
+//	public void setIndividualCasesList(List<IndividualCases> individualCasesList) {
+//		this.individualCasesList = individualCasesList;
+//	}
+
+
+	/**
+	 * @return the individualCasesList
+	 */
+	public Set<IndividualCases> getIndividualCasesSet() {
+		return individualCasesSet;
+	}
+
+
+	/**
+	 * @param individualCasesList the individualCasesList to set
+	 */
+	public void setIndividualCasesSet(Set<IndividualCases> individualCasesSet) {
+		this.individualCasesSet = individualCasesSet;
 	}
 
 	

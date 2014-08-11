@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Aug 6, 2014 9:58:18 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="data.EventPerson" table="event_person" catalog="testdb">
+        <composite-id name="id" class="data.EventPersonId">
+            <key-property name="eventId" type="long">
+                <column name="event_id" />
+            </key-property>
+            <key-property name="personId" type="long">
+                <column name="person_id" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="people" class="data.People" update="false" insert="false" fetch="select">
+            <column name="person_id" not-null="true" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

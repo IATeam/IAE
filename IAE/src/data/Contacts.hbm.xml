@@ -98,12 +98,27 @@
    <one-to-many class="data.Addresses"/>
   </set>
   
-  <set fetch="select" inverse="true" lazy="true" name="enquiriesSet" sort="unsorted" table="Enquiries">
+  <set fetch="select" inverse="true" lazy="true" name="enquiriesSet" sort="unsorted" table="Enquiries" order-by="id">
   	<key>
   		<column name="contact_id" not-null="true"/>
   	</key>
   	<one-to-many class="data.Enquiries"/>
   </set>
+  
+  <set fetch="select" inverse="true" lazy="true" name="individualCasesSet" sort="unsorted" table="Individual_Cases" order-by="id">
+  	<key>
+  		<column name="client_id" not-null="true"/>
+  	</key>
+  	<one-to-many class="data.IndividualCases"/>
+  </set>
+   <!-- <list name="individualCasesList" table="Individual_Cases" inverse="false">
+  	<key column="client_id"/>
+  	<key>
+  		<column name="client_id" not-null="true"/>
+  	</key>
+  	<list-index column="client_id" />
+  	<one-to-many class="data.IndividualCases"/>
+  </list> -->
  
 	 <!-- Many-to-many relationship -->
 	 <set name="disabilitiesSet" table="Client_Disabilities" inverse="false" lazy="true" fetch="select" cascade="all">
