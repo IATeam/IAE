@@ -69,7 +69,7 @@
         <!-- Many-to-many relationship -->
         <set name="enquiryIssuesSet" table="Enquiry_Issues" inverse="false" lazy="true" fetch="select">
         	<key column="enquiry_id"/>
-        	<many-to-many column="issue_id" class="data.IssueTypes"/>
+        	<one-to-many class="data.EnquiryIssues"/>
         </set>
     </class>
 </hibernate-mapping>

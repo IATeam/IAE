@@ -29,6 +29,7 @@ public class IndividualCases implements java.io.Serializable {
 	private Set<Risks> risksSet = new HashSet<Risks>();
 	private IndividualCases oldCase;
 	private Set<IndividualCases> individualCasesSet = new HashSet<IndividualCases>();
+	private Set<CaseIssues> caseIssuesSet = new HashSet<CaseIssues>();
 
 	/**
 	 * @param id
@@ -246,6 +247,20 @@ public class IndividualCases implements java.io.Serializable {
 	 */
 	public void setIndividualCasesSet(Set<IndividualCases> individualCasesSet) {
 		this.individualCasesSet = individualCasesSet;
+	}
+
+	/**
+	 * @return the caseIssuesSet
+	 */
+	public Set<CaseIssues> getCaseIssuesSet() {
+		return caseIssuesSet;
+	}
+
+	/**
+	 * @param caseIssuesSet the caseIssuesSet to set
+	 */
+	public void setCaseIssuesSet(Set<CaseIssues> caseIssuesSet) {
+		this.caseIssuesSet = caseIssuesSet;
 	}
 
 }

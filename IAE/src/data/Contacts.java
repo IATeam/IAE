@@ -40,7 +40,7 @@ public class Contacts implements java.io.Serializable {
 	private String identification;
 	private Date dob;
 	private Set<Addresses> addressesSet;
-	private Set<DisabilityTypes> disabilitiesSet = new HashSet<DisabilityTypes>();
+	private Set<ClientDisabilities> disabilitiesSet = new HashSet<ClientDisabilities>();
 	private Set<Enquiries> enquiriesSet;
 //	private List<IndividualCases> individualCasesList;
 	private Set<IndividualCases> individualCasesSet;
@@ -86,7 +86,7 @@ public class Contacts implements java.io.Serializable {
 			CulturalBackgroundTypes culturalBackground,
 			String culturalBackgroundComment, DangerTypes dangerType,
 			String identification, Date dob, Set<Addresses> addressesSet,
-			Set<DisabilityTypes> disabilitiesSet, Set<Enquiries> enquiriesSet) {
+			Set<ClientDisabilities> disabilitiesSet, Set<Enquiries> enquiriesSet) {
 		this.id = id;
 		this.titleType = titleType;
 		this.firstname = firstname;
@@ -368,13 +368,13 @@ public class Contacts implements java.io.Serializable {
 	/**
 	 * @return the disabilitiesSet
 	 */
-	public Set<DisabilityTypes> getDisabilitiesSet() {
+	public Set<ClientDisabilities> getDisabilitiesSet() {
 		return disabilitiesSet;
 	}
 	/**
 	 * @param disabilitiesSet the disabilitiesSet to set
 	 */
-	public void setDisabilitiesSet(Set<DisabilityTypes> disabilitiesSet) {
+	public void setDisabilitiesSet(Set<ClientDisabilities> disabilitiesSet) {
 		this.disabilitiesSet = disabilitiesSet;
 	}
 	/**

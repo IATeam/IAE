@@ -18,12 +18,15 @@ import org.testng.log4testng.Logger;
 
 import data.AccommodationTypes;
 import data.Addresses;
+import data.CaseIssues;
+import data.ClientDisabilities;
 import data.ContactTypes;
 import data.Contacts;
 import data.CulturalBackgroundTypes;
 import data.DangerTypes;
 import data.DisabilityTypes;
 import data.Enquiries;
+import data.EnquiryIssues;
 import data.EnquiryTypes;
 import data.GenderTypes;
 import data.IndividualCases;
@@ -41,7 +44,7 @@ public class NewTest {
   public void f() {
 	  @SuppressWarnings("unchecked")
 	List<Contacts> contactList = session.createSQLQuery("SELECT * FROM Contacts").addEntity(Contacts.class).list();
-	  Contacts contact = contactList.get(10);
+	  Contacts contact = contactList.get(1);
 	  System.out.println("Contact ID: " + contact.getId());
 	  System.out.println("Title ID: " + contact.getTitleType().getName());
 	  System.out.println("firstname: " + contact.getFirstname());
@@ -66,9 +69,9 @@ public class NewTest {
 	  for (Addresses a : addressesSet) {
 		  System.out.println("Address: " + a.getId() + " " + a.getAddress() + " " + a.getSurburb() + " " + a.getPostcode() + " " + a.getState());
 	  }
-	  Set<DisabilityTypes> disabilitySet = contact.getDisabilitiesSet();
-	  for (DisabilityTypes dt : disabilitySet) {
-		  System.out.println("Disability: " + dt.getId() + " " + dt.getDisabilityName());
+	  Set<ClientDisabilities> disabilitySet = contact.getDisabilitiesSet();
+	  for (ClientDisabilities dt : disabilitySet) {
+		  System.out.println("CLient Disability: " + dt.getId() + " " + dt.getDisabilityType().getDisabilityName() + " " + dt.getComments());
 	  }
 	  Set<Enquiries> enquiriesSet  = contact.getEnquiriesSet();
 	  for (Enquiries a : enquiriesSet) {
@@ -140,9 +143,9 @@ public class NewTest {
 	  for(Enquiries e : enquirySet) {
 		  System.out.println(e.getId() + " " + e.getDescription());
 	  }
-	  Set<IssueTypes> issueTypes = enquiry.getEnquiryIssuesSet();
-	  for (IssueTypes dt : issueTypes) {
-		  System.out.println("Issue: " + dt.getId() + " " + dt.getIssueName());
+	  Set<EnquiryIssues> issueTypes = enquiry.getEnquiryIssuesSet();
+	  for (EnquiryIssues dt : issueTypes) {
+		  System.out.println("Issue: " + dt.getId() + " " + dt.getIssue().getIssueName()  + dt.getComment());
 	  }
 	  
 	  List<EnquiryTypes> enquiryTypeList = session.createSQLQuery("SELECT * FROM Enquiry_Types").addEntity(EnquiryTypes.class).list();
@@ -152,6 +155,8 @@ public class NewTest {
 	  List<IssueTypes> issueTypeList = session.createSQLQuery("SELECT * FROM Issue_Types").addEntity(IssueTypes.class).list();
 	  System.out.println("Issue Type ID: " + issueTypeList.get(0).getId());
 	  System.out.println("Enuiry Count: " + issueTypeList.get(0).getEnquiriesSet().size());
+	  System.out.println("Case Count: " + issueTypeList.get(0).getIndividualCasesSet().size());
+	  
 	  
 	  List<StatusTypes> statusList = session.createSQLQuery("SELECT * FROM Status_Types").addEntity(StatusTypes.class).list();
 	  System.out.println("StatusId: " + statusList.get(0).getId());
@@ -167,6 +172,11 @@ public class NewTest {
 		  System.out.println("Risks: " + a.getId() + " " + a.getRiskDescription() + " " + a.getRiskManagement());
 	  }
 	  System.out.println("old case Id: " + ia.getOldCase().getId());
+	  Set<CaseIssues> caseIssues = ia.getCaseIssuesSet();
+	  for (CaseIssues dt : caseIssues) {
+		  System.out.println("Issue: " + dt.getId() + " " + dt.getIssue().getIssueName() + " " + dt.getStatusType().getStatusName() + " " + dt.getComments());
+	  }
+	  
 //	  Set<IndividualCases> iaSet = ia.getIndividualCasesSet();
 //	  for(IndividualCases e : iaSet) {
 //		  System.out.println(e.getId());

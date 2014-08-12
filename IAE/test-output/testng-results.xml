@@ -2,20 +2,20 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="3308" started-at="2014-08-11T12:55:34Z" finished-at="2014-08-11T12:55:38Z">
+  <suite name="Default suite" duration-ms="3397" started-at="2014-08-12T05:17:36Z" finished-at="2014-08-12T05:17:39Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="3308" started-at="2014-08-11T12:55:34Z" finished-at="2014-08-11T12:55:38Z">
+    <test name="Default test" duration-ms="3397" started-at="2014-08-12T05:17:36Z" finished-at="2014-08-12T05:17:39Z">
       <class name="HibernateTest.NewTest">
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:HibernateTest.NewTest@5aad1d4]" name="beforeMethod" is-config="true" duration-ms="2803" started-at="2014-08-11T22:55:34Z" finished-at="2014-08-11T22:55:37Z">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:HibernateTest.NewTest@22e53ca2]" name="beforeMethod" is-config="true" duration-ms="2871" started-at="2014-08-12T15:17:36Z" finished-at="2014-08-12T15:17:39Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="f()[pri:0, instance:HibernateTest.NewTest@5aad1d4]" name="f" duration-ms="490" started-at="2014-08-11T22:55:37Z" finished-at="2014-08-11T22:55:38Z">
+        <test-method status="PASS" signature="f()[pri:0, instance:HibernateTest.NewTest@22e53ca2]" name="f" duration-ms="508" started-at="2014-08-12T15:17:39Z" finished-at="2014-08-12T15:17:39Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- f -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:HibernateTest.NewTest@5aad1d4]" name="afterMethod" is-config="true" duration-ms="5" started-at="2014-08-11T22:55:38Z" finished-at="2014-08-11T22:55:38Z">
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:HibernateTest.NewTest@22e53ca2]" name="afterMethod" is-config="true" duration-ms="5" started-at="2014-08-12T15:17:39Z" finished-at="2014-08-12T15:17:39Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->

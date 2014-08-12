@@ -123,7 +123,7 @@
 	 <!-- Many-to-many relationship -->
 	 <set name="disabilitiesSet" table="Client_Disabilities" inverse="false" lazy="true" fetch="select" cascade="all">
 	 	<key column="contact_id"/>
-	 	<many-to-many column="disability_id" class="data.DisabilityTypes"/>
+	 	<one-to-many class="data.ClientDisabilities"/>
 	 </set>
  </class>
  

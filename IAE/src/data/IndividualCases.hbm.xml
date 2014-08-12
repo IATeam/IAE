@@ -67,5 +67,11 @@
         	<key column="old_case_id"/>
         	<one-to-many class="data.IndividualCases"/>
         </set>
+        
+        <!-- Many to many relationship -->
+        <set name="caseIssuesSet" table="Case_Issues" inverse="false" lazy="true" fetch="select">
+        	<key column="case_id"/>
+        	<one-to-many class="data.CaseIssues"/>
+        </set>
     </class>
 </hibernate-mapping>

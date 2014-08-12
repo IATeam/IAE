@@ -14,8 +14,21 @@ public class IssueTypes implements java.io.Serializable {
 	private String issueName;
 	private String issueDescription;
 	private Set<Enquiries> enquiriesSet = new HashSet<Enquiries>();
+	private Set<IndividualCases> individualCasesSet = new HashSet<IndividualCases>();
 
-	
+	/**
+	 * @return the individualCasesSet
+	 */
+	public Set<IndividualCases> getIndividualCasesSet() {
+		return individualCasesSet;
+	}
+
+	/**
+	 * @param individualCasesSet the individualCasesSet to set
+	 */
+	public void setIndividualCasesSet(Set<IndividualCases> individualCasesSet) {
+		this.individualCasesSet = individualCasesSet;
+	}
 
 	/**
 	 * 

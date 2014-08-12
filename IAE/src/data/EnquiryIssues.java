@@ -11,8 +11,10 @@ import java.util.Set;
 public class EnquiryIssues implements java.io.Serializable {
 
 	private Integer id;
-	private Integer enquiryId;
-	private Integer issueId;
+//	private Integer enquiryId;
+//	private Integer issueId;
+	private Enquiries enquiry;
+	private IssueTypes issue;
 	private String comment;
 	/**
 	 * 
@@ -22,15 +24,15 @@ public class EnquiryIssues implements java.io.Serializable {
 	}
 	/**
 	 * @param id
-	 * @param enquiryId
-	 * @param issueId
+	 * @param enquiry
+	 * @param issue
 	 * @param comment
 	 */
-	public EnquiryIssues(Integer id, Integer enquiryId, Integer issueId,
+	public EnquiryIssues(Integer id, Enquiries enquiry, IssueTypes issue,
 			String comment) {
 		this.id = id;
-		this.enquiryId = enquiryId;
-		this.issueId = issueId;
+		this.enquiry = enquiry;
+		this.issue = issue;
 		this.comment = comment;
 	}
 	/**
@@ -45,30 +47,54 @@ public class EnquiryIssues implements java.io.Serializable {
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	/**
-	 * @return the enquiryId
+/**
+	 * @return the enquiry
 	 */
-	public Integer getEnquiryId() {
-		return enquiryId;
+	public Enquiries getEnquiry() {
+		return enquiry;
 	}
 	/**
-	 * @param enquiryId the enquiryId to set
+	 * @param enquiry the enquiry to set
 	 */
-	public void setEnquiryId(Integer enquiryId) {
-		this.enquiryId = enquiryId;
+	public void setEnquiry(Enquiries enquiry) {
+		this.enquiry = enquiry;
 	}
 	/**
-	 * @return the issueId
+	 * @return the issue
 	 */
-	public Integer getIssueId() {
-		return issueId;
+	public IssueTypes getIssue() {
+		return issue;
 	}
 	/**
-	 * @param issueId the issueId to set
+	 * @param issue the issue to set
 	 */
-	public void setIssueId(Integer issueId) {
-		this.issueId = issueId;
+	public void setIssue(IssueTypes issue) {
+		this.issue = issue;
 	}
+	//	/**
+//	 * @return the enquiryId
+//	 */
+//	public Integer getEnquiryId() {
+//		return enquiryId;
+//	}
+//	/**
+//	 * @param enquiryId the enquiryId to set
+//	 */
+//	public void setEnquiryId(Integer enquiryId) {
+//		this.enquiryId = enquiryId;
+//	}
+//	/**
+//	 * @return the issueId
+//	 */
+//	public Integer getIssueId() {
+//		return issueId;
+//	}
+//	/**
+//	 * @param issueId the issueId to set
+//	 */
+//	public void setIssueId(Integer issueId) {
+//		this.issueId = issueId;
+//	}
 	/**
 	 * @return the comment
 	 */

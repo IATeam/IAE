@@ -30,7 +30,7 @@ public class Enquiries implements java.io.Serializable {
 	private String outOfCoverageFlag;
 	private Set<Enquiries> enquiriesSet;
 	private Enquiries parentEnquiry; 
-	private Set<IssueTypes> enquiryIssuesSet = new HashSet<IssueTypes>();
+	private Set<EnquiryIssues> enquiryIssuesSet = new HashSet<EnquiryIssues>();
 
 	
 
@@ -64,7 +64,7 @@ public class Enquiries implements java.io.Serializable {
 			Date createdDateTime, String inquisitor, String referralBy,
 			String referralTo, Date updatedDateTime, Integer updatedUserId,
 			String outOfCoverageFlag, Set<Enquiries> enquiriesSet,
-			Enquiries parentEnquiry, Set<IssueTypes> enquiryIssuesSet) {
+			Enquiries parentEnquiry, Set<EnquiryIssues> enquiryIssuesSet) {
 		this.id = id;
 		this.contact = contact;
 		this.enquiryType = enquiryType;
@@ -332,14 +332,14 @@ public class Enquiries implements java.io.Serializable {
 	/**
 	 * @return the enquiryIssuesSet
 	 */
-	public Set<IssueTypes> getEnquiryIssuesSet() {
+	public Set<EnquiryIssues> getEnquiryIssuesSet() {
 		return enquiryIssuesSet;
 	}
 
 	/**
 	 * @param enquiryIssuesSet the enquiryIssuesSet to set
 	 */
-	public void setEnquiryIssuesSet(Set<IssueTypes> enquiryIssuesSet) {
+	public void setEnquiryIssuesSet(Set<EnquiryIssues> enquiryIssuesSet) {
 		this.enquiryIssuesSet = enquiryIssuesSet;
 	}
 

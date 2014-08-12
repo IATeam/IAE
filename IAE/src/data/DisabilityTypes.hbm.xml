@@ -18,7 +18,7 @@
         <!-- Many-to-many relationship -->
         <set name="contactsSet" table="Client_Disabilities" inverse="true" lazy="true" fetch="select">
         	<key column="disability_id"/>
-        	<many-to-many column="contact_id" class="data.ClientDisabilities"/>
+        	<one-to-many class="data.ClientDisabilities"/>
         </set>
     </class>
 </hibernate-mapping>
