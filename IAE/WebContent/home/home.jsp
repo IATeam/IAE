@@ -13,6 +13,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<script src="<s:url value='/js/jquery/jquery-1.11.1.min.js' encode='false' includeParams='none'/>"></script>
+
 <script src="<s:url value='/js/jquery/jquery-ui.min.js' encode='false' includeParams='none'/>"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <s:head/>
@@ -38,7 +40,7 @@
 	<s:url var="urlENew" namespace="/enquiry" action="newEnquiry">
 		<s:param name="formTitle">New Enquiry</s:param>
 	</s:url>
-	<s:url var="urlEExisting" namespace="/enquiry" action="getEnquiry">
+	<s:url var="urlEExisting" namespace="/enquiry" action="getEnquiry" >
 		<s:param name="formTitle">Existing Enquiry</s:param>
 	</s:url>
 	<s:url id="urlCList" namespace="/case" value="caseList">
@@ -56,7 +58,7 @@
 			
 			<li><a id="aE"href="#">Enquiry</a>
 				<ul>
-					<li><sj:a id="aENew" href="%{urlENew}" targets="formDiv" onclick="menuclicked()">New Enquiry</sj:a></li>
+					<li><sj:a id="aENew" href="%{urlENew}" targets="formDiv" onclick="menuclicked()" >New Enquiry</sj:a></li>
 					<li><sj:a id="aEExisting" href="%{urlEExisting}" targets="formDiv" onclick="menuclicked()">Existing Enquiry Test</sj:a></li>
 					<li><sj:a id="aEList" href="%{urlEList}" targets="formDiv" onclick="menuclicked()">Enquiry List</sj:a>
 				</ul>
@@ -65,7 +67,7 @@
 			<li><a href="#">Case</a>
 				<ul>
 					<li><sj:a id="aCNew" href="%{urlCNew}" targets="formDiv" onclick="menuclicked()">New Case</sj:a></li>
-					<li><sj:a id="aCList" href="%{urlCList}" targets="formDiv" onclick="menuclicked()">Case List</sj:a>
+					<li><sj:a id="aCList" href="%{urlCList}" targets="formDiv" onclick="menuclicked()" >Case List</sj:a>
 				</ul>
 			</li>
 			
@@ -121,6 +123,7 @@
 			<div id="divRadio"><s:radio value="1" onclick="radioChecked(this.id)" name="radio" list="#{'1':'Database','2':'Document','3':'Report' }"/></div>
 			<!-- <button onclick="displayActivities()">display</button>
 			<button onclick="deleteLocalStorage()">clear</button> -->
+			<button id="searchButton">TmpButton</button>
 		</section>
 		
 		<section id="secSuggestions">
@@ -146,12 +149,17 @@
 		<s:div id="helpPanel"/>
 		<s:div id="slidingPanel" style="background: yellow; position: fixed; top: 20%; box-shadow: 3px 3px 5px grey; height: 60%; overflow: scroll;">slide</s:div>
 	</div>
-	</div>
+	<ul id="sortable">
+		<li>one</li>
+		<li>tow</li>
+		<li>three</li>
+	</ul>
 	<footer id="statusBar">
 		<label>User's Name</label>
 		<button>logout</button>
 	</footer>
 	<script>
+	
 		$(function(){
 			
 			$('#main-menu').smartmenus();
@@ -175,15 +183,15 @@
 			}, 1000);
 		}
 	</script>
-	<%-- <script>
-	 Experimental dragging div around.
+	<script>
+	 //Experimental dragging div around.
 	$(function(){
 		$("#aE").draggable();		
 	})
 	</script> --%>
 	
-	<%-- <script>
-	 Experimental Document find
+	<script>
+	/*  Experimental Document find
 	function findString(str){
 		var strFound;
 		
@@ -197,9 +205,13 @@
 			}  
 		} 
 
-	}
-
-	</script> --%>
+	} */
+	$("#searchButton").click(function(){
+		alert($("#searchbox").val());
+	})
+	
+	
+	</script> 
 	
 </body>
 </html>

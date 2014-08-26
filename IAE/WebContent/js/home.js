@@ -20,4 +20,7 @@
  	//search bar is greyed out unless on focus
  	//$('#dvSearchBox').blur()
  	
+		//$(document).ready(function(){
+			//$("#sortable").sortable();
+		//
  });
